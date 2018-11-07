@@ -1,7 +1,12 @@
 <?php
 
-	$connect = mysql_connect("mysql","","");
-	mysql_select_db("cocoaball");
+set_include_path($_SERVER['DOCUMENT_ROOT']  . "/" . "modules");
+	
+// Require modules
+require_once( 'Constants.class.php');
+
+	$connect = mysql_connect(Constants::DB_HOST, Constants::DB_USER, Constants::DB_PASSWORD);
+	mysql_select_db("hallaby_cocoaball");
 
 	$str = "SELECT * FROM highscores";
 	$query = mysql_query($str);
@@ -54,6 +59,6 @@
 
 	endwhile;
 	
-	echo "&hs1=$hs1&hs2=$hs2&hs3=$hs3&hs4=$hs4&hs5=$hs5&hs6=$hs6&hs7=$hs7&hs8=$hs8&hs9=$hs9&hs10=$hs10&hs1user=$hs1user&hs2user=$hs2user&hs3user=$hs3user&hs4user=$hs4user&hs5user=$hs5user&hs6user=$hs6user&hs7user=$hs7user&hs8user=$hs8user&hs9user=$hs9user&hs10user=$hs10user&mohs1=$mohs1&mohs2=$mohs2&mohs3=$mohs3&mohs4=$mohs4&mohs5=$mohs5&mohs6=$mohs6&mohs7=$mohs7&mohs8=$mohs8&mohs9=$mohs9&mohs10=$mohs10&mohs1user=$mohs1user&mohs2user=$mohs2user&mohs3user=$mohs3user&mohs4user=$mohs4user&mohs5user=$mohs5user&mohs6user=$mohs6user&mohs7user=$mohs7user&mohs8user=$mohs8user&mohs9user=$mohs9user&mohs10user=$mohs10user";
+	echo "&hs1=$hs1&hs2=$hs2&hs3=$hs3&hs4=$hs4&hs5=$hs5&hs6=$hs6&hs7=$hs7&hs8=$hs8&hs9=$hs9&hs10=$hs10&hs1user=$hs1user&hs2user=$hs2user&hs3user=$hs3user&hs4user=$hs4user&hs5user=$hs5user&hs6user=$hs6user&hs7user=$hs7user&hs8user=$hs8user&hs9user=$hs9user&hs10user=$hs10user&mohs1=$mohs1&mohs2=$mohs2&mohs3=$mohs3&mohs4=$mohs4&mohs5=$mohs5&mohs6=$mohs6&mohs7=$mohs7&mohs8=$mohs8&mohs9=$mohs9&mohs10=$mohs10&mohs1user=$mohs1user&mohs2user=$mohs2user&mohs3user=$mohs3user&mohs4user=$mohs4user&mohs5user=$mohs5user&mohs6user=$mohs6user&mohs7user=$mohs7user&mohs8user=$mohs8user&mohs9user=$mohs9user&mohs10user=$mohs10user&nothing=1";
 	mysql_close();
 ?>
